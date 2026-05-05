@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
-import logo from '/assets/logo.svg';
-import truckImage from '/assets/truck-placeholder.svg';
-import backgroundImage from '/assets/background.svg';
+import logo from 'figma:asset/0b6aaaa18f8efb568f4cb47e4e58202122018c27.png';
+import truckImage from 'figma:asset/cfbc3857cd1c9ed5d30b8c14883e17abe92e1c31.png';
+import backgroundImage from 'figma:asset/1099e96b3990249e90ffe245880b5c9d137ecb3d.png';
 
 interface Equipment {
   id: number;
@@ -326,9 +326,9 @@ export const PDFProposal = forwardRef<HTMLDivElement, PDFProposalProps>(
 
             {/* Three Photos */}
             <div style={{
-              display: 'flex',
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr 1fr',
               gap: '6px',
-              justifyContent: 'space-between',
               marginBottom: '6px'
             }}>
               {selectedItem.photoUrls && selectedItem.photoUrls.length > 0 ? (
@@ -336,22 +336,24 @@ export const PDFProposal = forwardRef<HTMLDivElement, PDFProposalProps>(
                   <div
                     key={index}
                     style={{
-                      flex: '1',
-                      height: '120px',
+                      width: '100%',
+                      height: '110px',
                       border: '1px solid #e5e7eb',
                       borderRadius: '4px',
                       overflow: 'hidden',
-                      backgroundColor: '#f9fafb'
+                      backgroundColor: '#f9fafb',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center'
                     }}
                   >
                     <img
                       src={photoUrl}
                       alt={`${selectedItem.name} - фото ${index + 1}`}
                       style={{
-                        width: '100%',
-                        height: '100%',
-                        objectFit: 'contain',
-                        padding: '4px'
+                        maxWidth: '100%',
+                        maxHeight: '100%',
+                        objectFit: 'contain'
                       }}
                     />
                   </div>
@@ -360,59 +362,65 @@ export const PDFProposal = forwardRef<HTMLDivElement, PDFProposalProps>(
                 // Fallback - three placeholder photos
                 <>
                   <div style={{
-                    flex: '1',
-                    height: '120px',
+                    width: '100%',
+                    height: '110px',
                     border: '1px solid #e5e7eb',
                     borderRadius: '4px',
                     overflow: 'hidden',
-                    backgroundColor: '#f9fafb'
+                    backgroundColor: '#f9fafb',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
                   }}>
                     <img
                       src={selectedItem.photoUrl || truckImage}
                       alt={selectedItem.name}
                       style={{
-                        width: '100%',
-                        height: '100%',
-                        objectFit: 'contain',
-                        padding: '4px'
+                        maxWidth: '100%',
+                        maxHeight: '100%',
+                        objectFit: 'contain'
                       }}
                     />
                   </div>
                   <div style={{
-                    flex: '1',
-                    height: '120px',
+                    width: '100%',
+                    height: '110px',
                     border: '1px solid #e5e7eb',
                     borderRadius: '4px',
                     overflow: 'hidden',
-                    backgroundColor: '#f9fafb'
+                    backgroundColor: '#f9fafb',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
                   }}>
                     <img
                       src={selectedItem.photoUrl || truckImage}
                       alt={selectedItem.name}
                       style={{
-                        width: '100%',
-                        height: '100%',
-                        objectFit: 'contain',
-                        padding: '4px'
+                        maxWidth: '100%',
+                        maxHeight: '100%',
+                        objectFit: 'contain'
                       }}
                     />
                   </div>
                   <div style={{
-                    flex: '1',
-                    height: '120px',
+                    width: '100%',
+                    height: '110px',
                     border: '1px solid #e5e7eb',
                     borderRadius: '4px',
                     overflow: 'hidden',
-                    backgroundColor: '#f9fafb'
+                    backgroundColor: '#f9fafb',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
                   }}>
                     <img
                       src={selectedItem.photoUrl || truckImage}
                       alt={selectedItem.name}
                       style={{
-                        width: '100%',
-                        height: '100%',
-                        objectFit: 'contain',
-                        padding: '4px'
+                        maxWidth: '100%',
+                        maxHeight: '100%',
+                        objectFit: 'contain'
                       }}
                     />
                   </div>
