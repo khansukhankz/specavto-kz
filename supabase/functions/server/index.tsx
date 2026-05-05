@@ -657,7 +657,9 @@ app.get("/make-server-0be467f4/equipment", async (c) => {
 
 app.get("/make-server-0be467f4/categories", async (c) => {
   try {
-    return c.json({ success: true, data: EQUIPMENT_DATA.categories });
+    const customCategories = await kv.getByPrefix('category:');
+    const allCategories = [...EQUIPMENT_DATA.categories, ...customCategories];
+    return c.json({ success: true, data: allCategories });
   } catch (error) {
     return c.json({ success: false, error: String(error) }, 500);
   }
@@ -667,18 +669,24 @@ app.get("/make-server-0be467f4/brands/:categoryId", async (c) => {
   try {
     const categoryId = c.req.param('categoryId');
     const defaultBrands = EQUIPMENT_DATA.brands[categoryId] || [];
+
+    // Get custom brands from KV store
+    const customBrandsFromKV = await kv.getByPrefix(`brand:${categoryId}:`);
+
+    // Get brands from equipment
     const allEquipment = await kv.getByPrefix('equipment:');
     const categoryEquipment = allEquipment.filter(item => item.id && item.name && item.categoryId === categoryId);
-    const brandIds = new Set(defaultBrands.map(b => b.id));
-    const customBrands: Array<{id: string, name: string}> = [];
+    const brandIds = new Set([...defaultBrands.map(b => b.id), ...customBrandsFromKV.map(b => b.id)]);
+    const equipmentBrands: Array<{id: string, name: string}> = [];
     categoryEquipment.forEach(item => {
       if (item.brandId && !brandIds.has(item.brandId)) {
         brandIds.add(item.brandId);
         const brandName = item.brandId.charAt(0).toUpperCase() + item.brandId.slice(1);
-        customBrands.push({ id: item.brandId, name: brandName });
+        equipmentBrands.push({ id: item.brandId, name: brandName });
       }
     });
-    const allBrands = [...defaultBrands, ...customBrands];
+
+    const allBrands = [...defaultBrands, ...customBrandsFromKV, ...equipmentBrands];
     return c.json({ success: true, data: allBrands });
   } catch (error) {
     return c.json({ success: false, error: String(error) }, 500);
@@ -945,6 +953,156 @@ app.delete("/make-server-0be467f4/managers/:id", async (c) => {
       return c.json({ success: false, error: 'Manager not found' }, 404);
     }
     await kv.del(`manager:${id}`);
+    return c.json({ success: true });
+  } catch (error) {
+    return c.json({ success: false, error: String(error) }, 500);
+  }
+});
+
+// Category management endpoints
+app.post("/make-server-0be467f4/categories", async (c) => {
+  try {
+    const body = await c.req.json();
+    const { id, name, icon } = body;
+
+    if (!id || !name || !icon) {
+      return c.json({ success: false, error: 'Missing required fields: id, name, icon' }, 400);
+    }
+
+    // Check if category already exists
+    const existing = await kv.get(`category:${id}`);
+    if (existing) {
+      return c.json({ success: false, error: 'Category with this ID already exists' }, 400);
+    }
+
+    const category = { id, name, icon };
+    await kv.set(`category:${id}`, category);
+    return c.json({ success: true, data: category });
+  } catch (error) {
+    return c.json({ success: false, error: String(error) }, 500);
+  }
+});
+
+app.put("/make-server-0be467f4/categories/:id", async (c) => {
+  try {
+    const id = c.req.param('id');
+    const body = await c.req.json();
+    const { name, icon } = body;
+
+    if (!name || !icon) {
+      return c.json({ success: false, error: 'Missing required fields: name, icon' }, 400);
+    }
+
+    const existing = await kv.get(`category:${id}`);
+    if (!existing) {
+      return c.json({ success: false, error: 'Category not found' }, 404);
+    }
+
+    const category = { id, name, icon };
+    await kv.set(`category:${id}`, category);
+    return c.json({ success: true, data: category });
+  } catch (error) {
+    return c.json({ success: false, error: String(error) }, 500);
+  }
+});
+
+app.delete("/make-server-0be467f4/categories/:id", async (c) => {
+  try {
+    const id = c.req.param('id');
+
+    // Don't allow deleting default categories
+    const defaultCategoryIds = EQUIPMENT_DATA.categories.map(cat => cat.id);
+    if (defaultCategoryIds.includes(id)) {
+      return c.json({ success: false, error: 'Cannot delete default category' }, 400);
+    }
+
+    const existing = await kv.get(`category:${id}`);
+    if (!existing) {
+      return c.json({ success: false, error: 'Category not found' }, 404);
+    }
+
+    // Check if any equipment uses this category
+    const allEquipment = await kv.getByPrefix('equipment:');
+    const hasEquipment = allEquipment.some(item => item.categoryId === id);
+    if (hasEquipment) {
+      return c.json({ success: false, error: 'Cannot delete category that has equipment' }, 400);
+    }
+
+    await kv.del(`category:${id}`);
+    return c.json({ success: true });
+  } catch (error) {
+    return c.json({ success: false, error: String(error) }, 500);
+  }
+});
+
+// Brand management endpoints
+app.post("/make-server-0be467f4/brands", async (c) => {
+  try {
+    const body = await c.req.json();
+    const { id, name, categoryId } = body;
+
+    if (!id || !name || !categoryId) {
+      return c.json({ success: false, error: 'Missing required fields: id, name, categoryId' }, 400);
+    }
+
+    const brandKey = `brand:${categoryId}:${id}`;
+    const existing = await kv.get(brandKey);
+    if (existing) {
+      return c.json({ success: false, error: 'Brand with this ID already exists in this category' }, 400);
+    }
+
+    const brand = { id, name, categoryId };
+    await kv.set(brandKey, brand);
+    return c.json({ success: true, data: brand });
+  } catch (error) {
+    return c.json({ success: false, error: String(error) }, 500);
+  }
+});
+
+app.put("/make-server-0be467f4/brands/:categoryId/:id", async (c) => {
+  try {
+    const categoryId = c.req.param('categoryId');
+    const id = c.req.param('id');
+    const body = await c.req.json();
+    const { name } = body;
+
+    if (!name) {
+      return c.json({ success: false, error: 'Missing required field: name' }, 400);
+    }
+
+    const brandKey = `brand:${categoryId}:${id}`;
+    const existing = await kv.get(brandKey);
+    if (!existing) {
+      return c.json({ success: false, error: 'Brand not found' }, 404);
+    }
+
+    const brand = { id, name, categoryId };
+    await kv.set(brandKey, brand);
+    return c.json({ success: true, data: brand });
+  } catch (error) {
+    return c.json({ success: false, error: String(error) }, 500);
+  }
+});
+
+app.delete("/make-server-0be467f4/brands/:categoryId/:id", async (c) => {
+  try {
+    const categoryId = c.req.param('categoryId');
+    const id = c.req.param('id');
+
+    const brandKey = `brand:${categoryId}:${id}`;
+    const existing = await kv.get(brandKey);
+    if (!existing) {
+      return c.json({ success: false, error: 'Brand not found' }, 404);
+    }
+
+    // Check if any equipment uses this brand
+    const allEquipment = await kv.getByPrefix('equipment:');
+    const hasEquipment = allEquipment.some(item => item.categoryId === categoryId && item.brandId === id);
+    if (hasEquipment) {
+      return c.json({ success: false, error: 'Cannot delete brand that has equipment' }, 400);
+    }
+
+    await kv.del(brandKey);
     return c.json({ success: true });
   } catch (error) {
     return c.json({ success: false, error: String(error) }, 500);

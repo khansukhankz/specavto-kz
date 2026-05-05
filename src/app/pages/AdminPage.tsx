@@ -188,6 +188,12 @@ interface Category {
   icon: string;
 }
 
+interface Brand {
+  id: string;
+  name: string;
+  categoryId: string;
+}
+
 export function AdminPage() {
   const navigate = useNavigate();
   const [equipmentList, setEquipmentList] = useState<Equipment[]>([]);
@@ -224,6 +230,20 @@ export function AdminPage() {
   const [editingManagerId, setEditingManagerId] = useState<string | null>(null);
   const [managerFormData, setManagerFormData] = useState<{name: string, phone: string}>({name: '', phone: ''});
   const [addingManager, setAddingManager] = useState(false);
+
+  // Tab state
+  const [activeTab, setActiveTab] = useState<'equipment' | 'categories' | 'brands' | 'managers'>('equipment');
+
+  // Category management state
+  const [editingCategoryId, setEditingCategoryId] = useState<string | null>(null);
+  const [categoryFormData, setcategoryFormData] = useState<{id: string, name: string, icon: string}>({id: '', name: '', icon: ''});
+  const [addingCategory, setAddingCategory] = useState(false);
+
+  // Brand management state
+  const [brands, setBrands] = useState<Brand[]>([]);
+  const [editingBrandId, setEditingBrandId] = useState<string | null>(null);
+  const [brandFormData, setBrandFormData] = useState<{id: string, name: string, categoryId: string}>({id: '', name: '', categoryId: ''});
+  const [addingBrand, setAddingBrand] = useState(false);
 
   const handleLogout = () => {
     localStorage.removeItem('adminAuth');
@@ -384,6 +404,39 @@ export function AdminPage() {
 
     fetchCategories();
   }, []);
+
+  // Fetch brands data
+  useEffect(() => {
+    const fetchBrands = async () => {
+      try {
+        const allBrands: Brand[] = [];
+        for (const category of categories) {
+          const response = await fetch(
+            `https://${projectId}.supabase.co/functions/v1/make-server-0be467f4/brands/${category.id}`,
+            {
+              headers: {
+                Authorization: `Bearer ${publicAnonKey}`,
+              },
+            }
+          );
+          const data = await response.json();
+          if (data.success && Array.isArray(data.data)) {
+            data.data.forEach((brand: {id: string, name: string}) => {
+              allBrands.push({ ...brand, categoryId: category.id });
+            });
+          }
+        }
+        setBrands(allBrands);
+        console.log(`Admin: ✓ Loaded ${allBrands.length} brands`);
+      } catch (error) {
+        console.error('Admin: ❌ Error fetching brands:', error);
+      }
+    };
+
+    if (categories.length > 0) {
+      fetchBrands();
+    }
+  }, [categories]);
 
   // Fetch managers data
   useEffect(() => {
@@ -788,6 +841,142 @@ export function AdminPage() {
     }
   };
 
+  // Category management functions
+  const handleAddCategory = async () => {
+    if (!categoryFormData.id || !categoryFormData.name || !categoryFormData.icon) {
+      alert('Заполните все поля');
+      return;
+    }
+
+    try {
+      setSaving('category-add');
+      const response = await fetch(
+        `https://${projectId}.supabase.co/functions/v1/make-server-0be467f4/categories`,
+        {
+          method: 'POST',
+          headers: {
+            Authorization: `Bearer ${publicAnonKey}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(categoryFormData),
+        }
+      );
+
+      const data = await response.json();
+      if (data.success) {
+        setCategories([...categories, data.data]);
+        setAddingCategory(false);
+        setcategoryFormData({id: '', name: '', icon: ''});
+        alert('Категория успешно добавлена!');
+      } else {
+        alert(`Ошибка: ${data.error}`);
+      }
+    } catch (error) {
+      console.error('Error adding category:', error);
+      alert('Ошибка при добавлении категории');
+    } finally {
+      setSaving(null);
+    }
+  };
+
+  const handleDeleteCategory = async (categoryId: string) => {
+    if (!confirm('Вы уверены, что хотите удалить эту категорию?')) return;
+
+    try {
+      setSaving(`category-delete-${categoryId}`);
+      const response = await fetch(
+        `https://${projectId}.supabase.co/functions/v1/make-server-0be467f4/categories/${categoryId}`,
+        {
+          method: 'DELETE',
+          headers: {
+            Authorization: `Bearer ${publicAnonKey}`,
+          },
+        }
+      );
+
+      const data = await response.json();
+      if (data.success) {
+        setCategories(categories.filter(cat => cat.id !== categoryId));
+        alert('Категория удалена!');
+      } else {
+        alert(`Ошибка: ${data.error}`);
+      }
+    } catch (error) {
+      console.error('Error deleting category:', error);
+      alert('Ошибка при удалении категории');
+    } finally {
+      setSaving(null);
+    }
+  };
+
+  // Brand management functions
+  const handleAddBrand = async () => {
+    if (!brandFormData.id || !brandFormData.name || !brandFormData.categoryId) {
+      alert('Заполните все поля');
+      return;
+    }
+
+    try {
+      setSaving('brand-add');
+      const response = await fetch(
+        `https://${projectId}.supabase.co/functions/v1/make-server-0be467f4/brands`,
+        {
+          method: 'POST',
+          headers: {
+            Authorization: `Bearer ${publicAnonKey}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(brandFormData),
+        }
+      );
+
+      const data = await response.json();
+      if (data.success) {
+        setBrands([...brands, data.data]);
+        setAddingBrand(false);
+        setBrandFormData({id: '', name: '', categoryId: ''});
+        alert('Бренд успешно добавлен!');
+      } else {
+        alert(`Ошибка: ${data.error}`);
+      }
+    } catch (error) {
+      console.error('Error adding brand:', error);
+      alert('Ошибка при добавлении бренда');
+    } finally {
+      setSaving(null);
+    }
+  };
+
+  const handleDeleteBrand = async (categoryId: string, brandId: string) => {
+    if (!confirm('Вы уверены, что хотите удалить этот бренд?')) return;
+
+    try {
+      setSaving(`brand-delete-${brandId}`);
+      const response = await fetch(
+        `https://${projectId}.supabase.co/functions/v1/make-server-0be467f4/brands/${categoryId}/${brandId}`,
+        {
+          method: 'DELETE',
+          headers: {
+            Authorization: `Bearer ${publicAnonKey}`,
+          },
+        }
+      );
+
+      const data = await response.json();
+      if (data.success) {
+        setBrands(brands.filter(brand => !(brand.id === brandId && brand.categoryId === categoryId)));
+        alert('Бренд удален!');
+      } else {
+        alert(`Ошибка: ${data.error}`);
+      }
+    } catch (error) {
+      console.error('Error deleting brand:', error);
+      alert('Ошибка при удалении бренда');
+    } finally {
+      setSaving(null);
+    }
+  };
+
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
@@ -867,12 +1056,57 @@ export function AdminPage() {
             Админ-панель
           </h1>
           <p className="text-sm sm:text-base text-white/80 text-center sm:text-left">Управление техникой и ценами</p>
+
+          {/* Tabs */}
+          <div className="flex gap-2 mt-6 flex-wrap">
+            <button
+              onClick={() => setActiveTab('equipment')}
+              className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                activeTab === 'equipment'
+                  ? 'bg-white text-blue-600'
+                  : 'bg-white/20 text-white hover:bg-white/30'
+              }`}
+            >
+              Техника
+            </button>
+            <button
+              onClick={() => setActiveTab('categories')}
+              className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                activeTab === 'categories'
+                  ? 'bg-white text-blue-600'
+                  : 'bg-white/20 text-white hover:bg-white/30'
+              }`}
+            >
+              Категории
+            </button>
+            <button
+              onClick={() => setActiveTab('brands')}
+              className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                activeTab === 'brands'
+                  ? 'bg-white text-blue-600'
+                  : 'bg-white/20 text-white hover:bg-white/30'
+              }`}
+            >
+              Бренды
+            </button>
+            <button
+              onClick={() => setActiveTab('managers')}
+              className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                activeTab === 'managers'
+                  ? 'bg-white text-blue-600'
+                  : 'bg-white/20 text-white hover:bg-white/30'
+              }`}
+            >
+              Менеджеры
+            </button>
+          </div>
         </div>
       </div>
 
       {/* Content */}
       <div className="max-w-6xl mx-auto py-4 sm:py-8 px-4 sm:px-6">
-        {/* Equipment List */}
+        {/* Equipment Tab */}
+        {activeTab === 'equipment' && (
         <div className="space-y-4">
           {categories.map((category) => {
             const categoryEquipment = equipmentByCategory[category.id] || [];
@@ -3837,6 +4071,283 @@ export function AdminPage() {
             </div>
           </motion.div>
         </div>
+        )}
+
+        {/* Categories Tab */}
+        {activeTab === 'categories' && (
+          <div className="space-y-4">
+            <div className="bg-white rounded-xl shadow-md p-6">
+              <div className="flex justify-between items-center mb-4">
+                <h2 className="text-xl font-bold">Категории техники</h2>
+                <button
+                  onClick={() => setAddingCategory(true)}
+                  className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+                >
+                  <Plus className="w-5 h-5" />
+                  Добавить категорию
+                </button>
+              </div>
+
+              {/* Add Category Form */}
+              {addingCategory && (
+                <div className="bg-gray-50 p-4 rounded-lg mb-4">
+                  <h3 className="font-semibold mb-3">Новая категория</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-3">
+                    <input
+                      type="text"
+                      placeholder="ID (например: forklifts)"
+                      value={categoryFormData.id}
+                      onChange={(e) => setcategoryFormData({...categoryFormData, id: e.target.value})}
+                      className="px-3 py-2 border rounded-lg"
+                    />
+                    <input
+                      type="text"
+                      placeholder="Название (например: Погрузчики)"
+                      value={categoryFormData.name}
+                      onChange={(e) => setcategoryFormData({...categoryFormData, name: e.target.value})}
+                      className="px-3 py-2 border rounded-lg"
+                    />
+                    <input
+                      type="text"
+                      placeholder="Иконка (например: truck)"
+                      value={categoryFormData.icon}
+                      onChange={(e) => setcategoryFormData({...categoryFormData, icon: e.target.value})}
+                      className="px-3 py-2 border rounded-lg"
+                    />
+                  </div>
+                  <div className="flex gap-2">
+                    <button
+                      onClick={handleAddCategory}
+                      disabled={saving === 'category-add'}
+                      className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 disabled:opacity-50"
+                    >
+                      {saving === 'category-add' ? 'Добавление...' : 'Сохранить'}
+                    </button>
+                    <button
+                      onClick={() => {
+                        setAddingCategory(false);
+                        setcategoryFormData({id: '', name: '', icon: ''});
+                      }}
+                      className="px-4 py-2 border rounded-lg hover:bg-gray-100"
+                    >
+                      Отмена
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              {/* Categories List */}
+              <div className="space-y-2">
+                {categories.map((category) => (
+                  <div key={category.id} className="flex items-center justify-between p-3 border rounded-lg hover:bg-gray-50">
+                    <div className="flex items-center gap-3">
+                      <div className="text-2xl">{getCategoryIcon(category.icon)}</div>
+                      <div>
+                        <div className="font-semibold">{category.name}</div>
+                        <div className="text-sm text-gray-500">ID: {category.id}</div>
+                      </div>
+                    </div>
+                    <button
+                      onClick={() => handleDeleteCategory(category.id)}
+                      disabled={saving === `category-delete-${category.id}`}
+                      className="p-2 text-red-600 hover:bg-red-50 rounded-lg disabled:opacity-50"
+                    >
+                      <Trash2 className="w-5 h-5" />
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Brands Tab */}
+        {activeTab === 'brands' && (
+          <div className="space-y-4">
+            <div className="bg-white rounded-xl shadow-md p-6">
+              <div className="flex justify-between items-center mb-4">
+                <h2 className="text-xl font-bold">Бренды</h2>
+                <button
+                  onClick={() => setAddingBrand(true)}
+                  className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+                >
+                  <Plus className="w-5 h-5" />
+                  Добавить бренд
+                </button>
+              </div>
+
+              {/* Add Brand Form */}
+              {addingBrand && (
+                <div className="bg-gray-50 p-4 rounded-lg mb-4">
+                  <h3 className="font-semibold mb-3">Новый бренд</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-3">
+                    <select
+                      value={brandFormData.categoryId}
+                      onChange={(e) => setBrandFormData({...brandFormData, categoryId: e.target.value})}
+                      className="px-3 py-2 border rounded-lg"
+                    >
+                      <option value="">Выберите категорию</option>
+                      {categories.map((cat) => (
+                        <option key={cat.id} value={cat.id}>{cat.name}</option>
+                      ))}
+                    </select>
+                    <input
+                      type="text"
+                      placeholder="ID (например: volvo)"
+                      value={brandFormData.id}
+                      onChange={(e) => setBrandFormData({...brandFormData, id: e.target.value})}
+                      className="px-3 py-2 border rounded-lg"
+                    />
+                    <input
+                      type="text"
+                      placeholder="Название (например: Volvo)"
+                      value={brandFormData.name}
+                      onChange={(e) => setBrandFormData({...brandFormData, name: e.target.value})}
+                      className="px-3 py-2 border rounded-lg"
+                    />
+                  </div>
+                  <div className="flex gap-2">
+                    <button
+                      onClick={handleAddBrand}
+                      disabled={saving === 'brand-add'}
+                      className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 disabled:opacity-50"
+                    >
+                      {saving === 'brand-add' ? 'Добавление...' : 'Сохранить'}
+                    </button>
+                    <button
+                      onClick={() => {
+                        setAddingBrand(false);
+                        setBrandFormData({id: '', name: '', categoryId: ''});
+                      }}
+                      className="px-4 py-2 border rounded-lg hover:bg-gray-100"
+                    >
+                      Отмена
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              {/* Brands List */}
+              <div className="space-y-2">
+                {brands.map((brand) => {
+                  const category = categories.find(c => c.id === brand.categoryId);
+                  return (
+                    <div key={`${brand.categoryId}-${brand.id}`} className="flex items-center justify-between p-3 border rounded-lg hover:bg-gray-50">
+                      <div>
+                        <div className="font-semibold">{brand.name}</div>
+                        <div className="text-sm text-gray-500">
+                          Категория: {category?.name || brand.categoryId} • ID: {brand.id}
+                        </div>
+                      </div>
+                      <button
+                        onClick={() => handleDeleteBrand(brand.categoryId, brand.id)}
+                        disabled={saving === `brand-delete-${brand.id}`}
+                        className="p-2 text-red-600 hover:bg-red-50 rounded-lg disabled:opacity-50"
+                      >
+                        <Trash2 className="w-5 h-5" />
+                      </button>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Managers Tab */}
+        {activeTab === 'managers' && (
+          <div className="space-y-4">
+            <div className="bg-white rounded-xl shadow-md p-6">
+              <div className="flex justify-between items-center mb-4">
+                <h2 className="text-xl font-bold">Менеджеры</h2>
+                <button
+                  onClick={() => setAddingManager(true)}
+                  className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+                >
+                  <Plus className="w-5 h-5" />
+                  Добавить менеджера
+                </button>
+              </div>
+
+              {/* Add Manager Form */}
+              {addingManager && (
+                <div className="bg-gray-50 p-4 rounded-lg mb-4">
+                  <h3 className="font-semibold mb-3">Новый менеджер</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
+                    <input
+                      type="text"
+                      placeholder="Имя"
+                      value={managerFormData.name}
+                      onChange={(e) => setManagerFormData({...managerFormData, name: e.target.value})}
+                      className="px-3 py-2 border rounded-lg"
+                    />
+                    <input
+                      type="tel"
+                      placeholder="Телефон"
+                      value={managerFormData.phone}
+                      onChange={(e) => setManagerFormData({...managerFormData, phone: e.target.value})}
+                      className="px-3 py-2 border rounded-lg"
+                    />
+                  </div>
+                  <div className="flex gap-2">
+                    <button
+                      onClick={handleAddManager}
+                      className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700"
+                    >
+                      Сохранить
+                    </button>
+                    <button
+                      onClick={() => {
+                        setAddingManager(false);
+                        setManagerFormData({name: '', phone: ''});
+                      }}
+                      className="px-4 py-2 border rounded-lg hover:bg-gray-100"
+                    >
+                      Отмена
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              {/* Managers List */}
+              <div className="space-y-2">
+                {managers.map((manager) => (
+                  <div key={manager.id} className="flex items-center justify-between p-3 border rounded-lg hover:bg-gray-50">
+                    <div>
+                      <div className="font-semibold">{manager.name}</div>
+                      <div className="text-sm text-gray-500">{manager.phone}</div>
+                    </div>
+                    <button
+                      onClick={async () => {
+                        if (!confirm('Удалить этого менеджера?')) return;
+                        try {
+                          const response = await fetch(
+                            `https://${projectId}.supabase.co/functions/v1/make-server-0be467f4/managers/${manager.id}`,
+                            {
+                              method: 'DELETE',
+                              headers: { Authorization: `Bearer ${publicAnonKey}` },
+                            }
+                          );
+                          const data = await response.json();
+                          if (data.success) {
+                            setManagers(managers.filter(m => m.id !== manager.id));
+                            alert('Менеджер удален!');
+                          }
+                        } catch (error) {
+                          console.error('Error deleting manager:', error);
+                          alert('Ошибка при удалении менеджера');
+                        }
+                      }}
+                      className="p-2 text-red-600 hover:bg-red-50 rounded-lg"
+                    >
+                      <Trash2 className="w-5 h-5" />
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Диалог подтверждения реинициализации */}
