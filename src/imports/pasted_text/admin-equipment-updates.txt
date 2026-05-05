@@ -1,0 +1,37 @@
+sites-runtime.3cf9de7a74741b1ada8f8db63a6ca2831b0eb39ad4b1040e1a56baf4cfcbe1a8.js:127 [Hydrated]
+31338b152112ba2e962e5a2e63297e42277a6396.js:26203 Admin: Fetching equipment from server...
+31338b152112ba2e962e5a2e63297e42277a6396.js:26231 Admin: Fetching categories from server...
+31338b152112ba2e962e5a2e63297e42277a6396.js:26243 Admin: ✓ Received data from server: {success: true, data: Array(6)}
+31338b152112ba2e962e5a2e63297e42277a6396.js:26244 Admin: ✓ Loaded 6 categories
+31338b152112ba2e962e5a2e63297e42277a6396.js:26215 Admin: ✓ Received data from server: {success: true, data: Array(14)}
+31338b152112ba2e962e5a2e63297e42277a6396.js:26219 Admin: ✓ Loaded 14 equipment items
+admin:1 The resource https://kp.specavto.kz/_json/77e35de0-4c2e-406c-8327-02b155511a4d/_index.json was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+31338b152112ba2e962e5a2e63297e42277a6396.js:26544 Admin: File selected: File {name: 'Без названия.jpg', lastModified: 1773206778510, lastModifiedDate: Wed Mar 11 2026 10:26:18 GMT+0500 (Казахстан), webkitRelativePath: '', size: 238423, …}
+31338b152112ba2e962e5a2e63297e42277a6396.js:26544 Admin: Setting editPhotoFile: Без названия.jpg 238423 bytes
+31338b152112ba2e962e5a2e63297e42277a6396.js:26279 🔵 UPDATE FUNCTION: Updating equipment crane-liebherr-2...
+31338b152112ba2e962e5a2e63297e42277a6396.js:26279 Admin: editPhotoFile state: File {name: 'Без названия.jpg', lastModified: 1773206778510, lastModifiedDate: Wed Mar 11 2026 10:26:18 GMT+0500 (Казахстан), webkitRelativePath: '', size: 238423, …}
+31338b152112ba2e962e5a2e63297e42277a6396.js:26297 Admin: ✓ Update response: {success: true, data: {…}}
+31338b152112ba2e962e5a2e63297e42277a6396.js:26297 🔵 AFTER UPDATE: PhotoUrl in response: undefined
+31338b152112ba2e962e5a2e63297e42277a6396.js:26299 Admin: Uploading photo for equipment: crane-liebherr-2
+31338b152112ba2e962e5a2e63297e42277a6396.js:26312 🔵 UPDATE: Photo upload response: {success: true, data: {…}}
+31338b152112ba2e962e5a2e63297e42277a6396.js:26312 🔵 UPDATE: Photo URL from response: https://rxboayzezdggfitfamcr.supabase.co/storage/v1/object/sign/make-0be467f4-equipment-photos/crane-liebherr-2-1773210856106.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jOTFhMTE3Mi1lNzkwLTRkMmMtOTliZi01ZDhkNTdhNGZjODciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJtYWtlLTBiZTQ2N2Y0LWVxdWlwbWVudC1waG90b3MvY3JhbmUtbGllYmhlcnItMi0xNzczMjEwODU2MTA2LmpwZyIsImlhdCI6MTc3MzIxMDg1NiwiZXhwIjoyMDg4NTcwODU2fQ.Kt-GmNpFbDZGcKFAW3XuezRFn6mnk0-5BvTiM-d1aZQ
+31338b152112ba2e962e5a2e63297e42277a6396.js:26312 🔵 UPDATE: ✓ Photo uploaded successfully
+31338b152112ba2e962e5a2e63297e42277a6396.js:26314 🔵 UPDATE: ✓ Photo URL updated in UI immediately
+31338b152112ba2e962e5a2e63297e42277a6396.js:26316 🔵 UPDATE: Fetching refreshed equipment list...
+31338b152112ba2e962e5a2e63297e42277a6396.js:26325 🔵 UPDATE: Refresh data response: {success: true, data: Array(14)}
+31338b152112ba2e962e5a2e63297e42277a6396.js:26327 🔵 UPDATE: Updated equipment data: {id: 'crane-liebherr-2', name: 'LTM 1100-5.2', specs: {…}, brandId: 'liebherr', photoUrl: 'https://rxboayzezdggfitfamcr.supabase.co/storage/v…DU2fQ.Kt-GmNpFbDZGcKFAW3XuezRFn6mnk0-5BvTiM-d1aZQ', …}
+31338b152112ba2e962e5a2e63297e42277a6396.js:26327 🔵 UPDATE: Updated equipment photoUrl: https://rxboayzezdggfitfamcr.supabase.co/storage/v1/object/sign/make-0be467f4-equipment-photos/crane-liebherr-2-1773210856106.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jOTFhMTE3Mi1lNzkwLTRkMmMtOTliZi01ZDhkNTdhNGZjODciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJtYWtlLTBiZTQ2N2Y0LWVxdWlwbWVudC1waG90b3MvY3JhbmUtbGllYmhlcnItMi0xNzczMjEwODU2MTA2LmpwZyIsImlhdCI6MTc3MzIxMDg1NiwiZXhwIjoyMDg4NTcwODU2fQ.Kt-GmNpFbDZGcKFAW3XuezRFn6mnk0-5BvTiM-d1aZQ
+31338b152112ba2e962e5a2e63297e42277a6396.js:26332 🔵 UPDATE: ✓ Equipment updated successfully
+31338b152112ba2e962e5a2e63297e42277a6396.js:26161 Admin: Reinitializing equipment data...
+admin:1 The resource https://kp.specavto.kz/_json/77e35de0-4c2e-406c-8327-02b155511a4d/_index.json was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+31338b152112ba2e962e5a2e63297e42277a6396.js:26174 Admin: ✓ Reinit response: {success: true, message: 'Equipment reinitialized successfully', count: 14}
+31338b152112ba2e962e5a2e63297e42277a6396.js:26186 Admin: ✓ Data reinitialized and refreshed
+31338b152112ba2e962e5a2e63297e42277a6396.js:25464 🔄 Loading categories from API...
+31338b152112ba2e962e5a2e63297e42277a6396.js:25464 API URL: https://rxboayzezdggfitfamcr.supabase.co/functions/v1/make-server-0be467f4/categories
+31338b152112ba2e962e5a2e63297e42277a6396.js:25473 ✓ Reinit called, status: 200
+31338b152112ba2e962e5a2e63297e42277a6396.js:25486 ✓ Response received
+31338b152112ba2e962e5a2e63297e42277a6396.js:25486 Response status: 200
+31338b152112ba2e962e5a2e63297e42277a6396.js:25486 Response headers: {content-type: 'application/json'}
+31338b152112ba2e962e5a2e63297e42277a6396.js:25491 Categories result: {success: true, data: Array(6)}
+31338b152112ba2e962e5a2e63297e42277a6396.js:25492 ✓ Categories loaded: 6
+kp.specavto.kz/:1 The resource https://kp.specavto.kz/_json/77e35de0-4c2e-406c-8327-02b155511a4d/_index.json was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.

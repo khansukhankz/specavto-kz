@@ -1,0 +1,50 @@
+sites-runtime.3cf9de7a74741b1ada8f8db63a6ca2831b0eb39ad4b1040e1a56baf4cfcbe1a8.js:127 [Hydrated]
+3468ff480653e6df5ecbb8f1f45cb1f2c230c1d3.js:26203 Admin: Fetching equipment from server...
+3468ff480653e6df5ecbb8f1f45cb1f2c230c1d3.js:26233 Admin: Fetching categories from server...
+3468ff480653e6df5ecbb8f1f45cb1f2c230c1d3.js:26245 Admin: ✓ Received data from server: {success: true, data: Array(6)}
+3468ff480653e6df5ecbb8f1f45cb1f2c230c1d3.js:26246 Admin: ✓ Loaded 6 categories
+3468ff480653e6df5ecbb8f1f45cb1f2c230c1d3.js:26215 Admin: ✓ Received data from server: {success: true, data: Array(14)}
+3468ff480653e6df5ecbb8f1f45cb1f2c230c1d3.js:26216 🔍 PHOTO URLS IN LOADED DATA:
+3468ff480653e6df5ecbb8f1f45cb1f2c230c1d3.js:26217   ❌ LTM 1050-3.1: NO PHOTO
+3468ff480653e6df5ecbb8f1f45cb1f2c230c1d3.js:26217   ❌ CAT 320: NO PHOTO
+3468ff480653e6df5ecbb8f1f45cb1f2c230c1d3.js:26217   ❌ BSF 47.16H: NO PHOTO
+3468ff480653e6df5ecbb8f1f45cb1f2c230c1d3.js:26217   ❌ F3000 6x4 Самосвал: NO PHOTO
+3468ff480653e6df5ecbb8f1f45cb1f2c230c1d3.js:26217   ❌ L3000 4x2 Бортовой: NO PHOTO
+3468ff480653e6df5ecbb8f1f45cb1f2c230c1d3.js:26217   ❌ L90H: NO PHOTO
+3468ff480653e6df5ecbb8f1f45cb1f2c230c1d3.js:26217   ❌ LTM 1100-5.2: NO PHOTO
+3468ff480653e6df5ecbb8f1f45cb1f2c230c1d3.js:26217   ❌ CAT 336: NO PHOTO
+3468ff480653e6df5ecbb8f1f45cb1f2c230c1d3.js:26217   ❌ 6520-6012-43: NO PHOTO
+3468ff480653e6df5ecbb8f1f45cb1f2c230c1d3.js:26217   ❌ H3000 8x4 Самосвал: NO PHOTO
+3468ff480653e6df5ecbb8f1f45cb1f2c230c1d3.js:26217   ❌ GMK5250L: NO PHOTO
+3468ff480653e6df5ecbb8f1f45cb1f2c230c1d3.js:26217   ❌ PC210LC-11: NO PHOTO
+3468ff480653e6df5ecbb8f1f45cb1f2c230c1d3.js:26217   ❌ X3000 6x4 Седельный тягач: NO PHOTO
+3468ff480653e6df5ecbb8f1f45cb1f2c230c1d3.js:26217   ❌ D65EX-17: NO PHOTO
+3468ff480653e6df5ecbb8f1f45cb1f2c230c1d3.js:26221 Admin: ✓ Loaded 14 equipment items
+admin:1 The resource https://kp.specavto.kz/_json/178e91e3-2cca-4dd3-9da8-5ca0c20f4e0b/_index.json was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+3468ff480653e6df5ecbb8f1f45cb1f2c230c1d3.js:26546 Admin: File selected: File {name: 'Без названия.jpg', lastModified: 1773206778510, lastModifiedDate: Wed Mar 11 2026 10:26:18 GMT+0500 (Казахстан), webkitRelativePath: '', size: 238423, …}
+3468ff480653e6df5ecbb8f1f45cb1f2c230c1d3.js:26546 Admin: Setting editPhotoFile: Без названия.jpg 238423 bytes
+3468ff480653e6df5ecbb8f1f45cb1f2c230c1d3.js:26281 🔵 UPDATE FUNCTION: Updating equipment crane-liebherr-2...
+3468ff480653e6df5ecbb8f1f45cb1f2c230c1d3.js:26281 Admin: editPhotoFile state: File {name: 'Без названия.jpg', lastModified: 1773206778510, lastModifiedDate: Wed Mar 11 2026 10:26:18 GMT+0500 (Казахстан), webkitRelativePath: '', size: 238423, …}
+3468ff480653e6df5ecbb8f1f45cb1f2c230c1d3.js:26299 Admin: ✓ Update response: {success: true, data: {…}}
+3468ff480653e6df5ecbb8f1f45cb1f2c230c1d3.js:26299 🔵 AFTER UPDATE: PhotoUrl in response: undefined
+3468ff480653e6df5ecbb8f1f45cb1f2c230c1d3.js:26301 Admin: Uploading photo for equipment: crane-liebherr-2
+3468ff480653e6df5ecbb8f1f45cb1f2c230c1d3.js:26314 🔵 UPDATE: Photo upload response: {success: true, data: {…}}
+3468ff480653e6df5ecbb8f1f45cb1f2c230c1d3.js:26314 🔵 UPDATE: Photo URL from response: https://rxboayzezdggfitfamcr.supabase.co/storage/v1/object/sign/make-0be467f4-equipment-photos/crane-liebherr-2-1773212727325.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jOTFhMTE3Mi1lNzkwLTRkMmMtOTliZi01ZDhkNTdhNGZjODciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJtYWtlLTBiZTQ2N2Y0LWVxdWlwbWVudC1waG90b3MvY3JhbmUtbGllYmhlcnItMi0xNzczMjEyNzI3MzI1LmpwZyIsImlhdCI6MTc3MzIxMjcyNywiZXhwIjoyMDg4NTcyNzI3fQ.JPv0PvFjUFi_BLqMmIMijddFsEs3GYdzRLnRjuFESRc
+3468ff480653e6df5ecbb8f1f45cb1f2c230c1d3.js:26314 🔵 UPDATE: ✓ Photo uploaded successfully
+3468ff480653e6df5ecbb8f1f45cb1f2c230c1d3.js:26316 🔵 UPDATE: ✓ Photo URL updated in UI immediately
+3468ff480653e6df5ecbb8f1f45cb1f2c230c1d3.js:26318 🔵 UPDATE: Fetching refreshed equipment list...
+3468ff480653e6df5ecbb8f1f45cb1f2c230c1d3.js:26327 🔵 UPDATE: Refresh data response: {success: true, data: Array(14)}
+3468ff480653e6df5ecbb8f1f45cb1f2c230c1d3.js:26329 🔵 UPDATE: Updated equipment data: {id: 'crane-liebherr-2', name: 'LTM 1100-5.2', specs: {…}, brandId: 'liebherr', photoUrl: 'https://rxboayzezdggfitfamcr.supabase.co/storage/v…zI3fQ.JPv0PvFjUFi_BLqMmIMijddFsEs3GYdzRLnRjuFESRc', …}
+3468ff480653e6df5ecbb8f1f45cb1f2c230c1d3.js:26329 🔵 UPDATE: Updated equipment photoUrl: https://rxboayzezdggfitfamcr.supabase.co/storage/v1/object/sign/make-0be467f4-equipment-photos/crane-liebherr-2-1773212727325.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jOTFhMTE3Mi1lNzkwLTRkMmMtOTliZi01ZDhkNTdhNGZjODciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJtYWtlLTBiZTQ2N2Y0LWVxdWlwbWVudC1waG90b3MvY3JhbmUtbGllYmhlcnItMi0xNzczMjEyNzI3MzI1LmpwZyIsImlhdCI6MTc3MzIxMjcyNywiZXhwIjoyMDg4NTcyNzI3fQ.JPv0PvFjUFi_BLqMmIMijddFsEs3GYdzRLnRjuFESRc
+3468ff480653e6df5ecbb8f1f45cb1f2c230c1d3.js:26334 🔵 UPDATE: ✓ Equipment updated successfully
+admin:1 The resource https://kp.specavto.kz/_json/178e91e3-2cca-4dd3-9da8-5ca0c20f4e0b/_index.json was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.
+3468ff480653e6df5ecbb8f1f45cb1f2c230c1d3.js:26281 🔵 UPDATE FUNCTION: Updating equipment crane-liebherr-2...
+3468ff480653e6df5ecbb8f1f45cb1f2c230c1d3.js:26281 Admin: editPhotoFile state: null
+3468ff480653e6df5ecbb8f1f45cb1f2c230c1d3.js:26299 Admin: ✓ Update response: {success: true, data: {…}}
+3468ff480653e6df5ecbb8f1f45cb1f2c230c1d3.js:26299 🔵 AFTER UPDATE: PhotoUrl in response: https://rxboayzezdggfitfamcr.supabase.co/storage/v1/object/sign/make-0be467f4-equipment-photos/crane-liebherr-2-1773212727325.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jOTFhMTE3Mi1lNzkwLTRkMmMtOTliZi01ZDhkNTdhNGZjODciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJtYWtlLTBiZTQ2N2Y0LWVxdWlwbWVudC1waG90b3MvY3JhbmUtbGllYmhlcnItMi0xNzczMjEyNzI3MzI1LmpwZyIsImlhdCI6MTc3MzIxMjcyNywiZXhwIjoyMDg4NTcyNzI3fQ.JPv0PvFjUFi_BLqMmIMijddFsEs3GYdzRLnRjuFESRc
+3468ff480653e6df5ecbb8f1f45cb1f2c230c1d3.js:26318 🔵 UPDATE: Fetching refreshed equipment list...
+3468ff480653e6df5ecbb8f1f45cb1f2c230c1d3.js:26327 🔵 UPDATE: Refresh data response: {success: true, data: Array(14)}
+3468ff480653e6df5ecbb8f1f45cb1f2c230c1d3.js:26329 🔵 UPDATE: Updated equipment data: {id: 'crane-liebherr-2', name: 'LTM 1100-5.2', specs: {…}, brandId: 'liebherr', photoUrl: 'https://rxboayzezdggfitfamcr.supabase.co/storage/v…zI3fQ.JPv0PvFjUFi_BLqMmIMijddFsEs3GYdzRLnRjuFESRc', …}
+3468ff480653e6df5ecbb8f1f45cb1f2c230c1d3.js:26329 🔵 UPDATE: Updated equipment photoUrl: https://rxboayzezdggfitfamcr.supabase.co/storage/v1/object/sign/make-0be467f4-equipment-photos/crane-liebherr-2-1773212727325.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jOTFhMTE3Mi1lNzkwLTRkMmMtOTliZi01ZDhkNTdhNGZjODciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJtYWtlLTBiZTQ2N2Y0LWVxdWlwbWVudC1waG90b3MvY3JhbmUtbGllYmhlcnItMi0xNzczMjEyNzI3MzI1LmpwZyIsImlhdCI6MTc3MzIxMjcyNywiZXhwIjoyMDg4NTcyNzI3fQ.JPv0PvFjUFi_BLqMmIMijddFsEs3GYdzRLnRjuFESRc
+3468ff480653e6df5ecbb8f1f45cb1f2c230c1d3.js:26334 🔵 UPDATE: ✓ Equipment updated successfully
+admin:1 The resource https://kp.specavto.kz/_json/178e91e3-2cca-4dd3-9da8-5ca0c20f4e0b/_index.json was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.

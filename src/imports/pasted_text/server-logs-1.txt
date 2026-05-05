@@ -1,0 +1,179 @@
+| event_message                                                     | event_type | function_id                          | id                                   | level | timestamp        |
+| ----------------------------------------------------------------- | ---------- | ------------------------------------ | ------------------------------------ | ----- | ---------------- |
+| shutdown                                                          | Shutdown   | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | fcd5cbf8-89a7-4c7d-a723-5d6b09110fb1 | log   | 1773213452394000 |
+| shutdown                                                          | Shutdown   | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 39da3bf1-555f-48b0-8ba1-87444117bf7b | log   | 1773213452029000 |
+| shutdown                                                          | Shutdown   | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 5a95bffb-1600-4eda-a289-16e1d7b5ea0a | log   | 1773213450336000 |
+| shutdown                                                          | Shutdown   | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 71802c4f-7f38-470b-9cff-6061cc45da9e | log   | 1773213449962000 |
+| Equipment already initialized, skipping...
+                       | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | cd518971-d17f-4275-bc1b-8cd3f79baf5c | info  | 1773213441684000 |
+| ✓ Server ready with equipment data
+                               | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | fa36ee1e-97ff-4372-bee4-3ad18b91ce25 | info  | 1773213441684000 |
+| Initialization status: true
+                                      | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | a61f46b9-4a08-4ec7-bfb5-c469c4499c56 | info  | 1773213441683000 |
+| ✓ Storage bucket already exists: make-0be467f4-equipment-photos
+  | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 1e69b140-d63a-490a-aeca-ff9e787783d2 | info  | 1773213441619000 |
+| --> GET /make-server-0be467f4/categories 200 2ms
+                 | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | c52e4b4f-c5b2-490c-8c05-86b32f70ab8b | info  | 1773213441514000 |
+| <-- GET /make-server-0be467f4/categories
+                         | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 17ab1e1a-29f4-416b-bc6e-2b7681e79fc3 | info  | 1773213441512000 |
+| === STARTING EQUIPMENT INITIALIZATION ===
+                        | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 1a3aa6c4-c362-4816-adb3-2330c47909cc | info  | 1773213441501000 |
+| === SERVER STARTING ===
+                                          | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | b082dcbd-8df9-44d7-a1a5-2920dd5ae776 | info  | 1773213441501000 |
+| booted (time: 35ms)                                               | Boot       | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | a556224f-3e6b-4cf7-841f-65e772db8f0a | log   | 1773213441428000 |
+| shutdown                                                          | Shutdown   | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 06744293-f3e9-4d3c-b0ed-055654c88e3f | log   | 1773213439017000 |
+| shutdown                                                          | Shutdown   | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | f33f3031-56db-49c4-8069-a41d15446875 | log   | 1773213438505000 |
+| ✓ Server ready with equipment data
+                               | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 03e89b84-9154-4044-b67f-7b29e23a32ce | info  | 1773213388981000 |
+| Initialization status: true
+                                      | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 8aa5eb08-36dc-449e-a73c-6bc08dc33cf2 | info  | 1773213388981000 |
+| Equipment already initialized, skipping...
+                       | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 199cba44-6ef9-401c-b4e0-53ded20b3ffb | info  | 1773213388981000 |
+| ✓ Storage bucket already exists: make-0be467f4-equipment-photos
+  | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | ecf39f2c-2147-454a-bd16-4933d3d1b241 | info  | 1773213388914000 |
+| --> OPTIONS /make-server-0be467f4/categories 204 0ms
+             | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | b65e084e-a46f-4577-a4d9-35d1cbf0867a | info  | 1773213388796000 |
+| <-- OPTIONS /make-server-0be467f4/categories
+                     | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | feba29e1-a4eb-4daf-a2dc-8047f56b286f | info  | 1773213388795000 |
+| === STARTING EQUIPMENT INITIALIZATION ===
+                        | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | c729a04d-4af2-4223-83a1-41ec32e0855d | info  | 1773213388788000 |
+| === SERVER STARTING ===
+                                          | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | dc9f6d47-a221-468e-8811-0dd6a024de69 | info  | 1773213388787000 |
+| booted (time: 28ms)                                               | Boot       | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 35a8544e-ed8b-4726-8abb-35f2ba20f47f | log   | 1773213388733000 |
+| shutdown                                                          | Shutdown   | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | ed24e833-8835-4df7-9903-4ff3503155bc | log   | 1773213383374000 |
+| shutdown                                                          | Shutdown   | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 54898ced-f0ef-433c-87b8-fadffdf522e0 | log   | 1773213382373000 |
+| --> GET /make-server-0be467f4/models/cranes/liebherr 200 236ms
+   | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | eda4b99a-683a-4f1f-8d7e-3fcdbae6acb7 | info  | 1773213377672000 |
+| ✓ Found 2 models for cranes-liebherr
+                             | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 57770902-3231-46c7-b447-d0db79317e41 | info  | 1773213377671000 |
+| Initialization status: true
+                                      | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 7bf3fb7c-a1c2-4f7a-ac7e-e9cfc4946b6e | info  | 1773213377624000 |
+| ✓ Server ready with equipment data
+                               | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | d1cb89eb-3c81-43dc-b326-a82ad5e5e151 | info  | 1773213377624000 |
+| Equipment already initialized, skipping...
+                       | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | f3018ff5-0b3d-4676-a3a2-f5f148f487bc | info  | 1773213377624000 |
+| Initialization status: true
+                                      | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 782d3760-e691-4c06-9746-9b885c60fbee | info  | 1773213377610000 |
+| Equipment already initialized, skipping...
+                       | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 11d46643-2c49-4f16-b99e-7ff179ed81fb | info  | 1773213377610000 |
+| ✓ Storage bucket already exists: make-0be467f4-equipment-photos
+  | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 7aef978c-396a-43e0-8c55-eb7176b2daaa | info  | 1773213377549000 |
+| ✓ Storage bucket already exists: make-0be467f4-equipment-photos
+  | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 5476b5a9-0795-4c21-a267-52e456f0dcf3 | info  | 1773213377545000 |
+| <-- GET /make-server-0be467f4/models/cranes/liebherr
+             | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 2fa2ca7d-d92c-41e2-92b1-da03bc8e16b1 | info  | 1773213377436000 |
+| === STARTING EQUIPMENT INITIALIZATION ===
+                        | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | b3c943ba-4473-4663-8bcd-d78268f14332 | info  | 1773213377436000 |
+| === SERVER STARTING ===
+                                          | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 7874fd20-7031-49a5-8242-2a2b66f2fa98 | info  | 1773213377429000 |
+| === STARTING EQUIPMENT INITIALIZATION ===
+                        | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 447d64fa-7f0e-4cf3-9233-77b37c0c861f | info  | 1773213377429000 |
+| booted (time: 28ms)                                               | Boot       | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 62c926da-576d-4863-b081-bf097c99e9f2 | log   | 1773213377380000 |
+| ✓ Server ready with equipment data
+                               | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 110823b5-6991-4ad7-800d-7d7ad45223f0 | info  | 1773213377322000 |
+| Equipment already initialized, skipping...
+                       | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 8eb4f8d2-f591-4663-808e-d6d98ca74c50 | info  | 1773213377322000 |
+| Initialization status: true
+                                      | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | d2fced22-4ccc-47e4-8ad5-8b1cdc398c50 | info  | 1773213377321000 |
+| ✓ Storage bucket already exists: make-0be467f4-equipment-photos
+  | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 26773ed4-a14f-4454-9c31-fe1c4499f422 | info  | 1773213377180000 |
+| --> OPTIONS /make-server-0be467f4/models/cranes/liebherr 204 1ms
+ | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | e82aec85-ec72-4768-a1b8-0ed17fe76de3 | info  | 1773213377098000 |
+| <-- OPTIONS /make-server-0be467f4/models/cranes/liebherr
+         | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 5931a34c-13e5-4c0a-8b28-7c3a7e5f05e8 | info  | 1773213377097000 |
+| === SERVER STARTING ===
+                                          | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 5adfb483-91d3-446b-9b35-76794652fbf1 | info  | 1773213377086000 |
+| === STARTING EQUIPMENT INITIALIZATION ===
+                        | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 274f731d-242f-4436-b1a9-91e259b43b6a | info  | 1773213377086000 |
+| booted (time: 37ms)                                               | Boot       | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | b0f152ec-4a1f-4a79-8835-8e8946cee930 | log   | 1773213377014000 |
+| Equipment already initialized, skipping...
+                       | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | dc028fb5-870f-48bc-829f-1bbcd39fccef | info  | 1773213375599000 |
+| ✓ Server ready with equipment data
+                               | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 0a733b2e-d8fb-432d-b313-20352de86fd7 | info  | 1773213375599000 |
+| Initialization status: true
+                                      | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 01ed9ad7-01f7-43e8-a2d4-44ab990f25b9 | info  | 1773213375599000 |
+| --> GET /make-server-0be467f4/brands/cranes 200 122ms
+            | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 1783a6cc-9703-46c1-a684-ac576b4f99b8 | info  | 1773213375508000 |
+| ✓ Found 3 brands for cranes
+                                      | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | eb149f99-8385-488f-8165-a623d93de824 | info  | 1773213375506000 |
+| ✓ Storage bucket already exists: make-0be467f4-equipment-photos
+  | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 656c983e-1b19-4715-91d9-d0e0ef37e866 | info  | 1773213375492000 |
+| <-- GET /make-server-0be467f4/brands/cranes
+                      | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 3db78d97-a366-45c0-a3d4-2767f39d79b6 | info  | 1773213375385000 |
+| === SERVER STARTING ===
+                                          | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 1cef18ba-44ed-4486-9a33-5205779076c3 | info  | 1773213375377000 |
+| === STARTING EQUIPMENT INITIALIZATION ===
+                        | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 7f355928-e33b-45e6-9ee3-4b15197d6044 | info  | 1773213375377000 |
+| booted (time: 29ms)                                               | Boot       | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | b35eb2cc-9f27-47a6-ad6b-ea9347d5c587 | log   | 1773213375323000 |
+| Equipment already initialized, skipping...
+                       | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 2e6fe9a1-f812-4870-acc5-d648ca7ecb4e | info  | 1773213375200000 |
+| ✓ Server ready with equipment data
+                               | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | bb0e5824-4929-4ea3-9fdf-eaef383d0124 | info  | 1773213375200000 |
+| Initialization status: true
+                                      | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 49d31101-4ded-4c42-9e6d-00259cec55d6 | info  | 1773213375200000 |
+| ✓ Storage bucket already exists: make-0be467f4-equipment-photos
+  | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 63465cb1-d493-4b86-9360-f5baa7d84b60 | info  | 1773213375114000 |
+| --> OPTIONS /make-server-0be467f4/brands/cranes 204 1ms
+          | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | d2c504f1-627b-4677-a9e5-9cadeeda2c7d | info  | 1773213375036000 |
+| <-- OPTIONS /make-server-0be467f4/brands/cranes
+                  | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | bb42f218-2bc1-4a48-b714-dd2cba41b95c | info  | 1773213375035000 |
+| === STARTING EQUIPMENT INITIALIZATION ===
+                        | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 2951cc92-1ad8-4eb6-85b3-3ff20bcad05e | info  | 1773213375024000 |
+| === SERVER STARTING ===
+                                          | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | aa38553e-95a6-4111-9ff8-81f87c218de6 | info  | 1773213375024000 |
+| booted (time: 35ms)                                               | Boot       | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | d10c2267-c1d8-464a-acda-2086cd94b7e2 | log   | 1773213374948000 |
+| shutdown                                                          | Shutdown   | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 6e371a31-85e3-4e5d-b88e-9cd4bd774731 | log   | 1773213371068000 |
+| shutdown                                                          | Shutdown   | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 6502f6f7-66ee-448e-80d1-04a72da5939f | log   | 1773213370300000 |
+| shutdown                                                          | Shutdown   | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | bb513522-69d5-4f36-bf20-743f7e15c8b0 | log   | 1773213369389000 |
+| shutdown                                                          | Shutdown   | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 394f813d-cc8f-4b6b-9472-da591efae9bb | log   | 1773213368536000 |
+| Initialization status: true
+                                      | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | eb679d55-20e7-4efc-a01c-95bc41635b9b | info  | 1773213364241000 |
+| Equipment already initialized, skipping...
+                       | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | e94ec74f-8e76-458b-b2fe-7a08e1f25722 | info  | 1773213364241000 |
+| ✓ Server ready with equipment data
+                               | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 99c44183-e462-4c01-9068-4a6434df11f3 | info  | 1773213364241000 |
+| ✓ Storage bucket already exists: make-0be467f4-equipment-photos
+  | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | fe890c2c-c711-4593-a699-1aae6111b5d8 | info  | 1773213364149000 |
+| --> GET /make-server-0be467f4/categories 200 2ms
+                 | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 0b8408a4-27d9-4eb1-a860-02113a16a081 | info  | 1773213364074000 |
+| <-- GET /make-server-0be467f4/categories
+                         | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 308d84f3-11cb-450b-b106-a27b9fbaeb85 | info  | 1773213364072000 |
+| === STARTING EQUIPMENT INITIALIZATION ===
+                        | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 64b1cf67-9614-4a0a-abf1-fd313a878d55 | info  | 1773213364063000 |
+| === SERVER STARTING ===
+                                          | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 69c4fdcf-8a1e-4981-a4ce-f1dcb9aa5841 | info  | 1773213364063000 |
+| ✓ Server ready with equipment data
+                               | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 019c6faa-f1b6-4774-a371-6c9a597f2685 | info  | 1773213364012000 |
+| Initialization status: true
+                                      | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 1774897f-27fc-4fd9-ab07-6b43308f5c45 | info  | 1773213364012000 |
+| Equipment already initialized, skipping...
+                       | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 0751c629-17fc-43f0-97ce-a023fcb928a4 | info  | 1773213364012000 |
+| booted (time: 33ms)                                               | Boot       | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 1d26fe32-9a4c-48f7-8012-da4aba3ebd20 | log   | 1773213364003000 |
+| ✓ Storage bucket already exists: make-0be467f4-equipment-photos
+  | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 5fb91595-b0c6-49de-99c3-862bd8107ff0 | info  | 1773213363690000 |
+| --> OPTIONS /make-server-0be467f4/categories 204 0ms
+             | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 4749244e-a518-41fa-b876-1d0d10d31d64 | info  | 1773213363580000 |
+| <-- OPTIONS /make-server-0be467f4/categories
+                     | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 0c057df4-8bf2-43b4-a3a0-4d653b7b7062 | info  | 1773213363579000 |
+| === STARTING EQUIPMENT INITIALIZATION ===
+                        | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | a969d364-09b5-4d44-804a-9f627c55b551 | info  | 1773213363572000 |
+| === SERVER STARTING ===
+                                          | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 756a1fd6-b39b-424e-ab3c-c58faab6e9a3 | info  | 1773213363572000 |
+| booted (time: 29ms)                                               | Boot       | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 654b2b11-d8ce-431e-9630-59b953eb41de | log   | 1773213363492000 |
+| shutdown                                                          | Shutdown   | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 961c8750-b5b4-40e5-9103-9d1051d002cb | log   | 1773213348744000 |
+| shutdown                                                          | Shutdown   | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 692c85b7-265f-4031-bab2-1bcdf58d60d2 | log   | 1773213348716000 |
+| shutdown                                                          | Shutdown   | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 462bf3f7-16d8-44bf-beef-ffad3047f755 | log   | 1773213328993000 |
+| --> GET /make-server-0be467f4/equipment 200 433ms
+                | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 0b10e57e-f99a-458a-8d31-77e4fd537f47 | info  | 1773213308856000 |
+| ✓ Total equipment loaded: 14
+                                     | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | c1892471-0bff-4b31-b818-a95780a46ea7 | info  | 1773213308855000 |
+| Equipment already initialized, skipping...
+                       | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | f67a26cf-b243-4d67-9125-1724595c6e42 | info  | 1773213308680000 |
+| Initialization status: true
+                                      | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | cfcf0082-b967-48e1-b9d4-8362e643f568 | info  | 1773213308680000 |
+| ✓ Server ready with equipment data
+                               | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 9622db54-dc33-446f-a6fc-99607392c551 | info  | 1773213308680000 |
+| Equipment already initialized, skipping...
+                       | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | ffb66869-8caf-47d9-ab6e-3e05644aa3e3 | info  | 1773213308663000 |
+| Initialization status: true
+                                      | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 27c506e7-37c0-4167-bbcd-632ab5dea0ef | info  | 1773213308663000 |

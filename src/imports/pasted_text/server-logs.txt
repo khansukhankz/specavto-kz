@@ -1,0 +1,188 @@
+| event_message                                                    | event_type | function_id                          | id                                   | level   | timestamp        |
+| ---------------------------------------------------------------- | ---------- | ------------------------------------ | ------------------------------------ | ------- | ---------------- |
+| shutdown                                                         | Shutdown   | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 0c24541b-9b78-4881-b219-812d66f6749a | log     | 1773212926627000 |
+| shutdown                                                         | Shutdown   | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 3cfe2c17-1e57-4328-8fa3-68831ec02c6e | log     | 1773212925117000 |
+| shutdown                                                         | Shutdown   | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | b6093afe-08ab-495c-bbce-a0e538da7ad5 | log     | 1773212881022000 |
+| shutdown                                                         | Shutdown   | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | ee0ab359-9337-48a3-994a-7112739fdd96 | log     | 1773212881005000 |
+| shutdown                                                         | Shutdown   | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 8ffb379b-4831-45d0-9968-649885e48254 | log     | 1773212864597000 |
+| ✓ Server ready with equipment data
+                              | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 41d2080b-044e-4fec-9a67-edb940c24df9 | info    | 1773212851855000 |
+| Initialization status: true
+                                     | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 2d8a55ee-9df2-4bb1-9e7d-aac32f9a38e9 | info    | 1773212851855000 |
+| Equipment already initialized, skipping...
+                      | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | dc01835b-8f66-437f-8756-971ae0eff3b6 | info    | 1773212851855000 |
+| ✓ Storage bucket already exists: make-0be467f4-equipment-photos
+ | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | b7ce04fe-1adb-4fdd-bcd9-1cb8a5f6d62e | info    | 1773212851799000 |
+| --> GET /make-server-0be467f4/categories 200 2ms
+                | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | def60bad-da17-4563-8977-0548a6a45729 | info    | 1773212851701000 |
+| <-- GET /make-server-0be467f4/categories
+                        | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 0c95c0cb-f6db-4abe-ae7b-9c735e069d80 | info    | 1773212851698000 |
+| === SERVER STARTING ===
+                                         | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 155216b0-494f-472f-9f60-affb15b55096 | info    | 1773212851688000 |
+| === STARTING EQUIPMENT INITIALIZATION ===
+                       | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 6a8893a0-7f00-47df-9309-57dac5cf1f2a | info    | 1773212851688000 |
+| booted (time: 34ms)                                              | Boot       | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 98433d88-28aa-454c-a9db-91b2e2699fd4 | log     | 1773212851610000 |
+| --> POST /make-server-0be467f4/equipment/reinit 200 1s
+          | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 649a29c6-76a5-4d72-be2b-51a7e99455e1 | info    | 1773212851346000 |
+| ✓ Reinitialized with 14 equipment items
+                         | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 6a759c88-bbc1-4c78-9777-b7aa3893e7cf | info    | 1773212851345000 |
+| ✓ Equipment initialization complete
+                             | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | aa158848-c3c7-48dc-9b57-77b6ff7a1064 | info    | 1773212851305000 |
+| ⚠ No models for loaders-caterpillar
+                             | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 3e352a46-5538-4074-be61-8a1fd1a52f77 | warning | 1773212851265000 |
+| ⚠ No models for loaders-jcb
+                                     | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 47742315-8420-4f77-b5e1-76e2239591a0 | warning | 1773212851265000 |
+| ✓ Saved equipment:loader-volvo-1: L90H
+                          | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | ba9b75a7-d5e3-4461-af54-65f24ac9aca7 | info    | 1773212851265000 |
+| ⚠ No models for bulldozers-caterpillar
+                          | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 394d99e8-d510-4136-8ada-cbebc98c2d6b | warning | 1773212851220000 |
+| ⚠ No models for bulldozers-shantui
+                              | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 5daee023-c238-4d4b-91bc-85ed05b96bc6 | warning | 1773212851220000 |
+| ✓ Saved equipment:bulldozer-komatsu-1: D65EX-17
+                 | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | c25f6739-391f-45c8-ab45-4bd5fefb8293 | info    | 1773212851220000 |
+| ✓ Saved equipment:truck-shacman-4: H3000 8x4 Самосвал
+           | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 91ade744-fe25-487c-8ba7-10832eae9005 | info    | 1773212851178000 |
+| ✓ Saved equipment:truck-shacman-3: L3000 4x2 Бортовой
+           | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 7b102da3-aeb4-4d02-82eb-d884226bdf12 | info    | 1773212851135000 |
+| ✓ Saved equipment:truck-shacman-2: F3000 6x4 Самосвал
+           | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 93d63c2f-56d9-44f3-b65e-bf282e03ab06 | info    | 1773212851089000 |
+| ✓ Saved equipment:truck-shacman-1: X3000 6x4 Седельный тягач
+    | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | ab094220-dc47-48be-93fd-0b34338c5345 | info    | 1773212851044000 |
+| ✓ Saved equipment:truck-kamaz-1: 6520-6012-43
+                   | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | b0e12e7f-ee49-487a-b721-aaddeeb5cf88 | info    | 1773212851004000 |
+| ⚠ No models for trucks-volvo
+                                    | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 4e8bb31f-baa0-4b40-997a-7203daea28eb | warning | 1773212851004000 |
+| ⚠ No models for trucks-man
+                                      | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 4fc5f63a-f808-44c9-b126-57a3244a5ad4 | warning | 1773212851004000 |
+| ⚠ No models for concrete-cifa
+                                   | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 4b04166e-7f57-4c09-9b89-ae1d62d1bd53 | warning | 1773212850964000 |
+| ✓ Saved equipment:concrete-putz-1: BSF 47.16H
+                   | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 769e8fe9-1897-4924-a265-c27ad7a75155 | info    | 1773212850964000 |
+| ⚠ No models for concrete-schwing
+                                | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 35e61236-97e4-437a-82f9-0ba133c16e60 | warning | 1773212850964000 |
+| ⚠ No models for excavators-hitachi
+                              | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 8d9d3754-b550-45ac-b5f5-d9402fa7c325 | warning | 1773212850920000 |
+| ✓ Saved equipment:excavator-komatsu-1: PC210LC-11
+               | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | b2ac629b-118e-41de-9ec7-a2fa4751d189 | info    | 1773212850920000 |
+| ✓ Saved equipment:excavator-cat-2: CAT 336
+                      | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 350df33c-19bb-4d8f-92ec-c7bdc3c3faee | info    | 1773212850854000 |
+| ✓ Saved equipment:excavator-cat-1: CAT 320
+                      | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | b3e03b9b-7ae0-4e4f-87cc-19cd87787d4c | info    | 1773212850807000 |
+| ✓ Saved equipment:crane-grove-1: GMK5250L
+                       | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 83d672cb-7ad6-4146-baef-b15df30c5082 | info    | 1773212850759000 |
+| ⚠ No models for cranes-terex
+                                    | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 8d712858-4f99-4ecf-a989-b0bcd2cdf5d2 | warning | 1773212850759000 |
+| ✓ Saved equipment:crane-liebherr-2: LTM 1100-5.2
+                | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | f8b21f42-7c40-4304-b328-68695ef3ef37 | info    | 1773212850715000 |
+| ✓ Saved equipment:crane-liebherr-1: LTM 1050-3.1
+                | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | b0d1002c-e2f3-4f75-9fae-a494738d7c14 | info    | 1773212850671000 |
+| Initializing equipment data...
+                                  | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 4e790bcd-fa5f-4e5c-bcd7-b34ea70decf3 | info    | 1773212850619000 |
+| Initialization status: undefined
+                                | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | e4498b56-4643-41a6-bd8e-68684fdb6520 | info    | 1773212850619000 |
+| ✓ Storage bucket already exists: make-0be467f4-equipment-photos
+ | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 425e333f-011b-4f66-b9e1-52bb8dee9209 | info    | 1773212850576000 |
+| ✓ Deleted initialization flag
+                                   | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | c9d3372a-e95f-423c-9b7f-7e356af9e31f | info    | 1773212850520000 |
+| === STARTING EQUIPMENT INITIALIZATION ===
+                       | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 53bd654c-6613-4038-a964-469ff28cfd8a | info    | 1773212850520000 |
+| ✓ Deleted 14 equipment items
+                                    | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 1e9e85c2-a09c-4b49-90c4-52e2d5c1d47c | info    | 1773212850463000 |
+| Equipment already initialized, skipping...
+                      | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 561f53dd-6d2e-48fa-af48-610faf633ebc | info    | 1773212850322000 |
+| Initialization status: true
+                                     | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | e2f43d21-f246-4167-9faa-f6deab15243f | info    | 1773212850322000 |
+| ✓ Server ready with equipment data
+                              | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 7d4b8896-42db-4a88-994f-b47704688623 | info    | 1773212850322000 |
+| Deleting equipment:excavator-cat-2
+                              | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 32b6eabc-b9ff-4bd1-a110-c56390920172 | info    | 1773212850273000 |
+| Deleting equipment:loader-volvo-1
+                               | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 7b71f702-cc98-42d7-982e-80ac20b9b35c | info    | 1773212850273000 |
+| Deleting equipment:truck-shacman-4
+                              | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 4040ffdd-669a-4919-a9a1-bfbb6473b927 | info    | 1773212850273000 |
+| Deleting equipment:crane-liebherr-2
+                             | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | fbe3da62-50eb-468a-9db3-82ea11aa1c53 | info    | 1773212850273000 |
+| Deleting equipment:truck-shacman-3
+                              | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 85bebb04-0de0-473a-8ad9-e4e5ff8a8b79 | info    | 1773212850273000 |
+| Deleting equipment:truck-kamaz-1
+                                | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 490f9abb-bf64-4fde-816f-ce6c73379b3f | info    | 1773212850273000 |
+| Deleting equipment:excavator-komatsu-1
+                          | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 9e673014-318b-430c-a2b9-387b255d6390 | info    | 1773212850272000 |
+| Deleting equipment:truck-shacman-1
+                              | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 8abbdf10-1060-466c-b32b-c85c1279fd12 | info    | 1773212850272000 |
+| Deleting equipment:crane-liebherr-1
+                             | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 1b45a3b6-be04-4f4d-9459-f715ee8b442b | info    | 1773212850272000 |
+| Deleting equipment:excavator-cat-1
+                              | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | dbfb45d5-af01-46f0-a69a-eb113e966b4e | info    | 1773212850272000 |
+| Deleting equipment:bulldozer-komatsu-1
+                          | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 904c75cd-603d-4535-89af-a46fccc7acdf | info    | 1773212850272000 |
+| Deleting equipment:truck-shacman-2
+                              | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | d1efc08b-87cb-4eb3-8b6a-268cf83ba4ca | info    | 1773212850272000 |
+| Deleting equipment:concrete-putz-1
+                              | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 3f6a2188-aced-4b2c-8c49-bf2cf279e74c | info    | 1773212850272000 |
+| Found 15 existing equipment items
+                               | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 5b108ef7-142b-4c03-9f81-34ca15366a1a | info    | 1773212850271000 |
+| Deleting equipment:crane-grove-1
+                                | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 26c1546e-f23a-4b35-9bc4-ddfbee740877 | info    | 1773212850271000 |
+| ✓ Storage bucket already exists: make-0be467f4-equipment-photos
+ | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | cc2011fc-650c-49d2-bf85-086950afadfe | info    | 1773212850257000 |
+| === FORCE REINITIALIZATION ===
+                                  | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 7cce0418-b5ef-4f63-83c6-7fad2cb0454d | info    | 1773212850172000 |
+| <-- POST /make-server-0be467f4/equipment/reinit
+                 | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 50bc0cd5-7455-4f99-9ff7-08c078434dc8 | info    | 1773212850171000 |
+| === STARTING EQUIPMENT INITIALIZATION ===
+                       | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 2a27e2f1-754a-4aa6-b70d-eeeaeb16b853 | info    | 1773212850163000 |
+| === SERVER STARTING ===
+                                         | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 1ad9bc49-e9b3-445f-8f70-805f5bae3db7 | info    | 1773212850163000 |
+| booted (time: 28ms)                                              | Boot       | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 39f038b5-445d-4144-9fdf-94050a32c715 | log     | 1773212850104000 |
+| shutdown                                                         | Shutdown   | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 73ec7c68-5e76-4b07-a176-a3a90d23a7f6 | log     | 1773212814652000 |
+| shutdown                                                         | Shutdown   | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 868f00f1-9c4e-4850-b8f8-5bb5ca00b385 | log     | 1773212814215000 |
+| --> GET /make-server-0be467f4/equipment 200 176ms
+               | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | bec237e2-3cfe-4164-9d4b-9f1ad8ae8bdb | info    | 1773212806225000 |
+| ✓ Total equipment loaded: 14
+                                    | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 1a340aaa-f9d5-4ada-a012-6300ba8e5af2 | info    | 1773212806224000 |
+| ✓ Server ready with equipment data
+                              | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | bf58a902-6bc5-4d21-95e6-f2c75286b4d1 | info    | 1773212806200000 |
+| Initialization status: true
+                                     | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 3458cd50-22b1-42eb-b127-9a3362829925 | info    | 1773212806200000 |
+| Equipment already initialized, skipping...
+                      | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 37d7fea9-a69e-42db-93a9-2dfe3353419e | info    | 1773212806200000 |
+| ✓ Server ready with equipment data
+                              | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 44d34313-579b-493f-afd7-e991cbc135b6 | info    | 1773212806186000 |
+| Initialization status: true
+                                     | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 943a3c66-d423-45a7-b1dc-818aa4eb76cc | info    | 1773212806186000 |
+| Equipment already initialized, skipping...
+                      | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | c7ceffc0-7af5-4bd0-a191-d9e2e3e34156 | info    | 1773212806186000 |
+| Initialization status: true
+                                     | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 3563e136-b572-4e47-8724-843cff0f9751 | info    | 1773212806182000 |
+| Equipment already initialized, skipping...
+                      | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | d0dce078-545f-481e-9f9e-9b6b6eabb40c | info    | 1773212806182000 |
+| ✓ Storage bucket already exists: make-0be467f4-equipment-photos
+ | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 44a7e668-0758-4037-a6ff-8488730d363e | info    | 1773212806160000 |
+| ✓ Storage bucket already exists: make-0be467f4-equipment-photos
+ | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 5f571e87-f339-42ff-8ba1-48ff8698267d | info    | 1773212806146000 |
+| ✓ Storage bucket already exists: make-0be467f4-equipment-photos
+ | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 7da9c31b-c224-4ffd-b176-b36be2a7a5f4 | info    | 1773212806130000 |
+| --> GET /make-server-0be467f4/categories 200 2ms
+                | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 4ed2667f-e73b-4fbf-b9d7-2ae144009c2e | info    | 1773212806104000 |
+| <-- GET /make-server-0be467f4/categories
+                        | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 52a0e73e-e86d-4e3a-b22b-dea7778edbde | info    | 1773212806102000 |
+| === SERVER STARTING ===
+                                         | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 830f36af-5811-47c4-96ac-1c45ae24d4e9 | info    | 1773212806092000 |
+| === STARTING EQUIPMENT INITIALIZATION ===
+                       | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 11f0d80e-1e56-4c22-8287-c78fc77d5de2 | info    | 1773212806092000 |
+| === FETCHING EQUIPMENT ===
+                                      | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | a905711d-dc99-43db-848c-0baf9e47d3d6 | info    | 1773212806049000 |
+| <-- GET /make-server-0be467f4/equipment
+                         | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 9278ac95-842d-4976-ac6c-8853ddfdebc3 | info    | 1773212806049000 |
+| === STARTING EQUIPMENT INITIALIZATION ===
+                       | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 5cf489a9-6c6c-4c75-a567-7d3c63713c05 | info    | 1773212806049000 |
+| === STARTING EQUIPMENT INITIALIZATION ===
+                       | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | a52f94a7-f243-4723-9779-860253848075 | info    | 1773212806042000 |
+| === SERVER STARTING ===
+                                         | Log        | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 1c868f0a-5363-4e00-85c7-dbbc048253ec | info    | 1773212806042000 |
+| booted (time: 34ms)                                              | Boot       | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 1570665b-58a3-4ba7-81e3-5e3a2cf31630 | log     | 1773212806007000 |
+| booted (time: 28ms)                                              | Boot       | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 0c8ec133-1320-4da0-b40d-8b31216ba459 | log     | 1773212805991000 |
+| shutdown                                                         | Shutdown   | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | 3135528d-bbb3-4721-968c-0f7213ae9225 | log     | 1773212803173000 |
+| shutdown                                                         | Shutdown   | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | c53fcd9a-7a7c-4501-b6ed-d393d3c77a2d | log     | 1773212802175000 |
+| shutdown                                                         | Shutdown   | a76e5531-158e-4bd8-8bcf-72a19bee38d2 | eed0cfa6-8141-4266-b0e4-55c526dea24a | log     | 1773212801385000 |
