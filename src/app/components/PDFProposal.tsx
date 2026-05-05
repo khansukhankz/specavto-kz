@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
-import logo from 'figma:asset/0b6aaaa18f8efb568f4cb47e4e58202122018c27.png';
-import truckImage from 'figma:asset/cfbc3857cd1c9ed5d30b8c14883e17abe92e1c31.png';
-import backgroundImage from 'figma:asset/1099e96b3990249e90ffe245880b5c9d137ecb3d.png';
+import logo from '/assets/logo.svg';
+import truckImage from '/assets/truck-placeholder.svg';
+import backgroundImage from '/assets/background.svg';
 
 interface Equipment {
   id: number;

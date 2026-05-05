@@ -21,7 +21,7 @@ import {
 } from 'lucide-react';
 import { projectId, publicAnonKey } from '/utils/supabase/info';
 import { useNavigate } from 'react-router';
-import logoImage from 'figma:asset/96296ef438adf21c7e9a93c090c6d074154c807b.png';
+import logoImage from '/assets/logo.svg';
 
 interface Equipment {
   id: number | string;
