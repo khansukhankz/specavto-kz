@@ -188,14 +188,31 @@ interface PDFProposalProps {
   managerPhone?: string;
   isPriceWithVAT?: boolean; // Flag to indicate if the displayed price includes VAT
   customPrice?: number; // Custom price entered by user (if any)
+  // Editable texts
+  customTexts?: {
+    companyName?: string;
+    companyDescription?: string;
+    proposalTitle?: string;
+    proposalSubtitle?: string;
+    footerDisclaimer?: string;
+  };
 }
 
 export const PDFProposal = forwardRef<HTMLDivElement, PDFProposalProps>(
-  ({ selectedItem, categoryIcon, clientCompany, clientName, days, quantity, finalPrice, validUntil, additionalEquipment, deliveryTerms, warranty, deliveryTime, paymentTerms, isFullWidth = false, managerName, managerPhone, isPriceWithVAT, customPrice }, ref) => {
+  ({ selectedItem, categoryIcon, clientCompany, clientName, days, quantity, finalPrice, validUntil, additionalEquipment, deliveryTerms, warranty, deliveryTime, paymentTerms, isFullWidth = false, managerName, managerPhone, isPriceWithVAT, customPrice, customTexts }, ref) => {
     // Early return if no selectedItem
     if (!selectedItem) {
       return null;
     }
+
+    // Default texts
+    const texts = {
+      companyName: customTexts?.companyName || 'ТОО «Спец Авто Казахстан»',
+      companyDescription: customTexts?.companyDescription || 'ТОО «Спец Авто Казахстан» — ведущий поставщик спецтехники в Казахстане, раотающий с 2015 года и предоставляющий широкий спектр',
+      proposalTitle: customTexts?.proposalTitle || 'КОММЕРЧЕСКОЕ ПРЕДЛОЖЕНИЕ',
+      proposalSubtitle: customTexts?.proposalSubtitle || 'На аренду спецтехники',
+      footerDisclaimer: customTexts?.footerDisclaimer || 'Настоящее коммерческое предложение не является офертой и не обязывает ТОО Спец Авто Казахстан к заключению договора на указанных условиях. Окончательные условия определяются отдельно заключаемым догвором.',
+    };
 
     return (
       <div
@@ -269,10 +286,10 @@ export const PDFProposal = forwardRef<HTMLDivElement, PDFProposalProps>(
             {/* Title and Contacts */}
             <div style={{ textAlign: 'right' }}>
               <div style={{ fontSize: '11px', fontWeight: 'bold', marginBottom: '2px', color: '#1d4ed8' }}>
-                КОММЕРЧЕСКОЕ ПРЕДЛОЖЕНИЕ №
+                {texts.proposalTitle} №
               </div>
               <div style={{ fontSize: '9px', marginBottom: '4px', color: '#374151' }}>
-                ТОО «Спец Авто Казахстан», для {clientCompany || 'Клиента'}
+                {texts.companyName}, для {clientCompany || 'Клиента'}
               </div>
               <div style={{ fontSize: '9px', color: '#4b5563', lineHeight: '1.6' }}>
                 <div style={{ marginBottom: '2px' }}>
@@ -302,7 +319,7 @@ export const PDFProposal = forwardRef<HTMLDivElement, PDFProposalProps>(
           {/* Company Description */}
           <div style={{ marginBottom: '6px', fontSize: '10px', lineHeight: '1.3', color: '#374151' }}>
             <p style={{ margin: '0 0 3px 0', color: '#374151' }}>
-              <strong style={{ color: '#FE8A02', fontSize: '11px' }}>ТОО Спец Авто Казахстан</strong> — ведущий поставщик спецтехники в Казахстане, раотающий с 2015 года и предоставляющий широкий спектр
+              <strong style={{ color: '#FE8A02', fontSize: '11px' }}>{texts.companyName}</strong> — {texts.companyDescription}
               строительной и дорожной техники от мировых производитеей.
             </p>
             <p style={{ margin: '0' }}>Официальный партнер ведущих мировых производителей спецтехники. В течение многих лет накапливаем знания и опыт в области продажи техники, организации сервисного обслуживания и ремонта, обеспечении запасными частями от ведущих производителей. Сегодня в компании работает команда из более чем 50 высококвалифицированных специалистов.</p>
@@ -1536,7 +1553,7 @@ export const PDFProposal = forwardRef<HTMLDivElement, PDFProposalProps>(
               </svg>
               <span>specavtokazakhstan@gmail.com</span>
             </div>
-            <div style={{ fontSize: '7px', lineHeight: '1.3', color: '#6b7280' }}>Настоящее коммерческое предложение не является офертой и не обязывает ТОО Спец Авто Казахстан к заключению договора на указанных условиях. Окончательные условия определяются отдельно заключаемым догвором.</div>
+            <div style={{ fontSize: '7px', lineHeight: '1.3', color: '#6b7280' }}>{texts.footerDisclaimer}</div>
           </div>
         </div>
       </div>

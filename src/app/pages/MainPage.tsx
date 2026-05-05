@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Download, Plus, Trash2, FileText } from 'lucide-react';
+import { Download, Plus, Trash2, FileText, Edit3, X } from 'lucide-react';
 import { projectId, publicAnonKey } from '/utils/supabase/info';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
@@ -251,6 +251,17 @@ export function MainPage() {
   const [paymentTerms, setPaymentTerms] = useState(paymentTermsOptions[0]);
 
   const [loading, setLoading] = useState(true);
+
+  // Custom texts for PDF
+  const [customTexts, setCustomTexts] = useState({
+    companyName: 'ТОО «Спец Авто Казахстан»',
+    companyDescription: 'ведущий поставщик спецтехники в Казахстане, работающий с 2015 года и предоставляющий широкий спектр',
+    proposalTitle: 'КОММЕРЧЕСКОЕ ПРЕДЛОЖЕНИЕ',
+    proposalSubtitle: 'На аренду спецтехники',
+    footerDisclaimer: 'Настоящее коммерческое предложение не является офертой и не обязывает ТОО Спец Авто Казахстан к заключению договора на указанных условиях. Окончательные условия определяются отдельно заключаемым договором.',
+  });
+
+  const [editingText, setEditingText] = useState<string | null>(null);
 
   // Calculate valid until date
   const validUntil = validUntilMode === 'custom' 
@@ -1143,12 +1154,22 @@ export function MainPage() {
                       {/* KP Header */}
                       <div className="bg-blue-600 text-white px-4 py-2 rounded-t-xl flex items-center justify-between">
                         <h3 className="font-semibold">КП #{index + 1}: {proposal.equipment.name}</h3>
-                        <button
-                          onClick={() => removeProposal(index)}
-                          className="p-1 hover:bg-blue-700 rounded transition-colors"
-                        >
-                          <Trash2 className="w-4 h-4" />
-                        </button>
+                        <div className="flex items-center gap-2">
+                          <button
+                            onClick={() => setEditingText('modal')}
+                            className="p-1 hover:bg-blue-700 rounded transition-colors"
+                            title="Редактировать тексты КП"
+                          >
+                            <Edit3 className="w-4 h-4" />
+                          </button>
+                          <button
+                            onClick={() => removeProposal(index)}
+                            className="p-1 hover:bg-blue-700 rounded transition-colors"
+                            title="Удалить КП"
+                          >
+                            <Trash2 className="w-4 h-4" />
+                          </button>
+                        </div>
                       </div>
 
                       {/* Mobile Preview - Scaled */}
@@ -1173,6 +1194,7 @@ export function MainPage() {
                             managerPhone={selectedManager?.phone}
                             isPriceWithVAT={proposal.isPriceWithVAT}
                             customPrice={proposal.customPrice}
+                            customTexts={customTexts}
                           />
                         </div>
                       </div>
@@ -1199,6 +1221,7 @@ export function MainPage() {
                           managerPhone={selectedManager?.phone}
                           isPriceWithVAT={proposal.isPriceWithVAT}
                           customPrice={proposal.customPrice}
+                          customTexts={customTexts}
                         />
                       </div>
 
@@ -1289,10 +1312,117 @@ export function MainPage() {
                 managerPhone={selectedManager?.phone}
                 isPriceWithVAT={proposal.isPriceWithVAT}
                 customPrice={proposal.customPrice}
+                customTexts={customTexts}
               />
             </div>
           );
         })}
+
+        {/* Edit Texts Modal */}
+        {editingText === 'modal' && (
+          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6"
+            >
+              <div className="flex justify-between items-center mb-4">
+                <h2 className="text-2xl font-bold text-gray-900">Редактировать тексты КП</h2>
+                <button
+                  onClick={() => setEditingText(null)}
+                  className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
+
+              <div className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Название компании
+                  </label>
+                  <input
+                    type="text"
+                    value={customTexts.companyName}
+                    onChange={(e) => setCustomTexts({ ...customTexts, companyName: e.target.value })}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Описание компании
+                  </label>
+                  <textarea
+                    value={customTexts.companyDescription}
+                    onChange={(e) => setCustomTexts({ ...customTexts, companyDescription: e.target.value })}
+                    rows={3}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Заголовок КП
+                  </label>
+                  <input
+                    type="text"
+                    value={customTexts.proposalTitle}
+                    onChange={(e) => setCustomTexts({ ...customTexts, proposalTitle: e.target.value })}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Подзаголовок КП
+                  </label>
+                  <input
+                    type="text"
+                    value={customTexts.proposalSubtitle}
+                    onChange={(e) => setCustomTexts({ ...customTexts, proposalSubtitle: e.target.value })}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Текст в футере (дисклеймер)
+                  </label>
+                  <textarea
+                    value={customTexts.footerDisclaimer}
+                    onChange={(e) => setCustomTexts({ ...customTexts, footerDisclaimer: e.target.value })}
+                    rows={4}
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                </div>
+
+                <div className="flex gap-3 pt-4">
+                  <button
+                    onClick={() => setEditingText(null)}
+                    className="flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
+                  >
+                    Сохранить
+                  </button>
+                  <button
+                    onClick={() => {
+                      setCustomTexts({
+                        companyName: 'ТОО «Спец Авто Казахстан»',
+                        companyDescription: 'ведущий поставщик спецтехники в Казахстане, работающий с 2015 года и предоставляющий широкий спектр',
+                        proposalTitle: 'КОММЕРЧЕСКОЕ ПРЕДЛОЖЕНИЕ',
+                        proposalSubtitle: 'На аренду спецтехники',
+                        footerDisclaimer: 'Настоящее коммерческое предложение не является офертой и не обязывает ТОО Спец Авто Казахстан к заключению договора на указанных условиях. Окончательные условия определяются отдельно заключаемым договором.',
+                      });
+                    }}
+                    className="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
+                  >
+                    Сбросить
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
       </div>
     </div>
   );
