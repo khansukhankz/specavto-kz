@@ -1514,11 +1514,8 @@ export const PDFProposal = forwardRef<HTMLDivElement, PDFProposalProps>(
             </div>
             <div style={{ fontSize: '9px', marginTop: '3px', color: '#4b5563' }}>
               {customPrice !== undefined
-                ? (isPriceWithVAT
-                    ? `Цена с НДС 12%`
-                    : `Цена указана без НДС`
-                  )
-                : `(${selectedItem?.pricePerDay.toLocaleString()} ₸ × ${quantity} шт + НДС 12%)`
+                ? `(Цена без НДС + НДС 16%)`
+                : `(${selectedItem?.pricePerDay.toLocaleString()} ₸ × ${quantity} шт + НДС 16%)`
               }
             </div>
           </div>

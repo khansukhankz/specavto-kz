@@ -318,27 +318,19 @@ export function MainPage() {
     let totalPrice: number;
     let vat: number;
     let finalPrice: number;
-    
+
     if (proposal.customPrice !== undefined) {
-      // Custom price is set
-      if (proposal.isPriceWithVAT) {
-        // Checkbox ON "С НДС": add 12% VAT to the entered price
-        totalPrice = proposal.customPrice;
-        vat = Math.round(totalPrice * 0.12);
-        finalPrice = totalPrice + vat;
-      } else {
-        // Checkbox OFF: price WITHOUT VAT, no VAT calculation
-        totalPrice = proposal.customPrice;
-        vat = 0;
-        finalPrice = totalPrice;
-      }
+      // Custom price is set - always add 16% VAT
+      totalPrice = proposal.customPrice;
+      vat = Math.round(totalPrice * 0.16);
+      finalPrice = totalPrice + vat;
     } else {
-      // Use automatic calculation (always base price + VAT)
+      // Use automatic calculation (always base price + 16% VAT)
       totalPrice = proposal.equipment.pricePerDay * proposal.quantity;
-      vat = Math.round(totalPrice * 0.12);
+      vat = Math.round(totalPrice * 0.16);
       finalPrice = totalPrice + vat;
     }
-    
+
     return { totalPrice, vat, finalPrice };
   };
 
@@ -1023,12 +1015,12 @@ export function MainPage() {
                       <span className="font-medium">{selectedModel.pricePerDay.toLocaleString()} ₸</span>
                     </div>
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-gray-600">НДС 12%:</span>
-                      <span className="font-medium">{Math.round(selectedModel.pricePerDay * 0.12).toLocaleString()} ₸</span>
+                      <span className="text-gray-600">НДС 16%:</span>
+                      <span className="font-medium">{Math.round(selectedModel.pricePerDay * 0.16).toLocaleString()} ₸</span>
                     </div>
                     <div className="flex justify-between items-center text-xl font-bold text-blue-600">
                       <span>Итого:</span>
-                      <span>{(selectedModel.pricePerDay * 1.12).toLocaleString()} ₸</span>
+                      <span>{(selectedModel.pricePerDay * 1.16).toLocaleString()} ₸</span>
                     </div>
                   </div>
 
@@ -1094,20 +1086,9 @@ export function MainPage() {
                         
                         {/* Editable Price Field */}
                         <div className="space-y-2">
-                          <div className="flex items-center justify-between">
-                            <label className="block text-sm font-medium text-gray-700">
-                              Цена
-                            </label>
-                            <label className="flex items-center gap-2 cursor-pointer">
-                              <input
-                                type="checkbox"
-                                checked={item.isPriceWithVAT || false}
-                                onChange={() => toggleProposalVAT(index)}
-                                className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
-                              />
-                              <span className="text-xs text-gray-600">С НДС</span>
-                            </label>
-                          </div>
+                          <label className="block text-sm font-medium text-gray-700">
+                            Цена (без НДС)
+                          </label>
                           <input
                             type="number"
                             min="0"
@@ -1116,11 +1097,11 @@ export function MainPage() {
                               const newPrice = parseFloat(e.target.value);
                               updateProposalPrice(index, isNaN(newPrice) ? undefined : newPrice);
                             }}
-                            placeholder={item.isPriceWithVAT ? "Введите цену без НДС" : "Введите цену с НДС"}
+                            placeholder="Введите цену без НДС"
                             className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
                           />
                           <div className="flex justify-between text-xs text-gray-500">
-                            <span>НДС 12%: {vat.toLocaleString()} ₸</span>
+                            <span>НДС 16%: {vat.toLocaleString()} ₸</span>
                             <span className="font-semibold text-gray-900">Итого: {finalPrice.toLocaleString()} ₸</span>
                           </div>
                         </div>

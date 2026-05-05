@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { Lock, User, Shield, TrendingUp, Settings } from 'lucide-react';
-import logo from '/assets/logo.svg';
+import logo from 'figma:asset/96296ef438adf21c7e9a93c090c6d074154c807b.png';
 
 export function AdminLoginPage() {
   const [username, setUsername] = useState('');
